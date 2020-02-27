@@ -1,0 +1,48 @@
+var space = createSprite(0, 0 ,400, 400);
+space.setAnimation("space");
+space.scale = 2.5;
+space.y = space.height/2;
+
+var player = createSprite(190, 375,20,20);
+player.setAnimation("animation_4");
+
+for (var i = 50; i < 390; i=i+50) {
+  var galaxian = createSprite(i, 200, 10, 10);
+  galaxian.setAnimation("animation_1");
+  
+}
+
+for (var i = 70; i < 350; i=i+50) {
+  var galaxian1 = createSprite(i, 150, 10, 10);
+  galaxian1.setAnimation("animation_2");
+}
+
+for (var i = 100; i < 350; i=i+50) {
+  var galaxian2 = createSprite(i, 100, 10, 10);
+  galaxian2.setAnimation("animation_1");
+}
+
+
+for (var i = 130; i < 300; i=i+50) {
+  var galaxian3 = createSprite(i, 50, 10, 10);
+  galaxian3.setAnimation("animation_3");
+}
+
+function draw() {
+  background(10);
+  player.x = World.mouseX;
+  createEdgeSprites();
+  player.collide(bottomEdge);
+  
+  space.velocityY = 2;
+  
+  if (space.y > 500) {
+    space.y = space.height/2;
+  }
+  
+  drawSprites();
+  
+}
+
+
+code.org link : https://studio.code.org/projects/gamelab/8p1PM_JbVfjR79rylaQlP6lT6j5-hDX0a2m-v5NvnmA
